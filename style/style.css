@@ -1,0 +1,251 @@
+body, html {
+  font-family: 'Lato', sans-serif;
+}
+
+/** Navbar**/
+nav {
+  z-index: 1000;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 18rem;
+  height: 100vh;
+  box-shadow: 4px 0 5px -2px #888;
+  background-color: white;
+}
+nav ul {
+  margin: 2rem 0;
+}
+nav ul a {
+  text-decoration: none;
+  padding: 0 1rem;
+  color: #000;
+  display: flex;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+}
+nav ul li {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height: 3rem;
+}
+nav ul a:hover {
+  background-color: #c00a27;
+  color: white;
+  font-weight: 700;
+}
+nav li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+nav ul li span {
+  align-self: center;
+  font-size: 1.1rem;
+
+}
+.nav-logo {
+  height: 3rem;
+  width: 100%;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.nav-icon {
+  align-self: center;
+  height: 2rem;
+  padding-right: 1rem;
+  opacity: 0.7;
+}
+
+.social {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.social i {
+  font-size: 2rem;
+  color:rgba(0, 0, 0, 0.8);
+}
+.social i:hover {
+  color: #c00a27;
+}
+.copyright {
+  padding: 1rem;
+}
+.copyright p {
+  font-size: 0.8rem;
+  color:rgba(0, 0, 0, 0.4)
+}
+.section {
+  padding-top: 4rem;
+  padding-left: 18rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/**slideShow**/
+.card {
+  position: relative;
+  width: 900px;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-self: center;
+
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*Light blue cover above the slide show*/
+.card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 900;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+}
+
+.card_part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 7;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  transform: translateX( 900px );
+  background-image: url( mediterranean_grill_somerville.jpg );
+  background-size: cover;
+  
+  animation: opaqTransition 21s cubic-bezier(0, 0, 0, 0.9) infinite;
+}
+
+
+.card_part.card_part-two {
+  z-index: 6;
+  background-image: url( Kebab.jpg );
+  animation-delay: 7s;
+}
+
+.card_part.card_part-three {
+  z-index: 5;
+  background-image: url( Falafel-balls.jpg );
+  animation-delay: 14s;
+}
+
+@keyframes opaqTransition {
+  2% { transform: translateX( 0 ); }
+  25% { transform: translateX( 0 ); }
+  28% { transform: translateX( -900px ); }
+  100% { transform: translateX( -900px ); }
+}
+
+.aside {
+  display: flex;
+  align-content: space-around;
+}
+.aside-card {
+  padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.aside-card h3 {
+  padding: 1rem;
+  text-align: center;
+}
+.aside-card img {
+  align-self: center;
+  height: 5rem;
+  width: auto;
+  margin: 1rem;
+}
+.aside-card p {
+  padding: 1rem;
+}
+
+.footer {
+  height: 22rem;
+  padding-left: 18rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #2c2c2c;
+}
+.footer img {
+  margin: 4rem;
+  align-self: center;
+  height: 4rem;
+  width: auto;
+}
+.footer ul {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding: 2rem 8rem;
+}
+.footer ul li {
+  padding: 1rem 3rem;
+  border-right: 1px solid #c00a27;
+}
+.footer ul li:last-child {
+  border-right: none;
+}
+
+.section-sides-header {
+  padding-left: 18rem;
+  background-image: url(./Falafel-balls.jpg);
+  background-size: cover;
+  background-position: center;
+  height:60vh;
+}
+.section-sides-header h1 {
+  font-size: 6rem;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  text-align: center;
+  padding-top: 10rem;
+  text-align: center;
+  color: white;
+}
+
+.section-sides {
+  padding-left: 18rem;
+  margin: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+.section-card {
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+  width: 18rem;
+  border: 1px solid #c00a27;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.section-card img {
+  height: 12rem;
+  object-fit: cover;
+}
+.section-card h3 {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.section-card p {
+  padding: 1rem;
+}
+
+.section-card .price {
+  font-weight: 700;
+}
