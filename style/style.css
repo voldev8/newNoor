@@ -3,6 +3,9 @@ body, html {
 }
 
 /** Navbar**/
+.p-menu1 {
+  display: none;
+}
 nav {
   z-index: 1000;
   position: fixed;
@@ -79,13 +82,22 @@ nav ul li span {
   font-size: 0.8rem;
   color:rgba(0, 0, 0, 0.4)
 }
-.section {
+.section-main {
   padding-top: 4rem;
   padding-left: 18rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
+.card h1 {
+ font-size: 3rem;
+ font-weight: 700;
+ align-self: center;
+ color: #c00a27;
+ opacity: 0.4;
+}
+
 /**slideShow**/
 .card {
   position: relative;
@@ -93,24 +105,21 @@ nav ul li span {
   height: 600px;
   overflow: hidden;
   display: flex;
+  justify-content: center;
   align-self: center;
-
   border-radius: 5px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/*Light blue cover above the slide show*/
 .card::after {
   content: '';
   position: absolute;
   left: 0;
   top: 0;
   z-index: 900;
-
   display: block;
   width: 100%;
   height: 100%;
-
 }
 
 .card_part {
@@ -118,33 +127,30 @@ nav ul li span {
   top: 0;
   left: 0;
   z-index: 7;
-
   display: flex;
   align-items: center;
   width: 100%;
   height: 100%;
-  
   transform: translateX( 900px );
-  background-image: url( mediterranean_grill_somerville.jpg );
+  background-image: url( ../media/mediterranean_grill_somerville.jpg );
   background-size: cover;
-  
-  animation: opaqTransition 21s cubic-bezier(0, 0, 0, 0.9) infinite;
+  animation: picTransition 21s cubic-bezier(0, 0, 0, 0.9) infinite;
 }
 
 
 .card_part.card_part-two {
   z-index: 6;
-  background-image: url( Kebab.jpg );
+  background-image: url( ../media/Kebab.jpg );
   animation-delay: 7s;
 }
 
 .card_part.card_part-three {
   z-index: 5;
-  background-image: url( Falafel-balls.jpg );
+  background-image: url( ../media/Falafel-balls.jpg );
   animation-delay: 14s;
 }
 
-@keyframes opaqTransition {
+@keyframes picTransition {
   2% { transform: translateX( 0 ); }
   25% { transform: translateX( 0 ); }
   28% { transform: translateX( -900px ); }
@@ -154,9 +160,13 @@ nav ul li span {
 .aside {
   display: flex;
   align-content: space-around;
+  flex-flow: wrap;
+  align-content: center;
+  justify-content: center;
 }
 .aside-card {
-  padding: 4rem 6rem;
+  padding: 4rem 4rem;
+  width: 24rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -174,10 +184,12 @@ nav ul li span {
 }
 .aside-card p {
   padding: 1rem;
+  align-self: center;
 }
 
+/**footer**/
 .footer {
-  height: 22rem;
+  height: 26rem;
   padding-left: 18rem;
   display: flex;
   flex-direction: column;
@@ -203,39 +215,72 @@ nav ul li span {
   border-right: none;
 }
 
-.section-sides-header {
-  padding-left: 18rem;
-  background-image: url(./Falafel-balls.jpg);
+/**apps & sides**/
+.section-header {
+  margin-left: 18rem;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   height:60vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
 }
-.section-sides-header h1 {
+.section-sides-header {
+  background-image: url(../media/Falafel-balls.jpg);
+}
+.section-salads-header {
+  background-image: url(../media/Tabbouli-Noor.jpg);
+}
+.section-wraps-header {
+  background-image: url(../media/noor-works.jpg);
+}
+.section-dinners-header {
+  background-image: url(../media/noor-trio-kebab-mix.jpg);
+}
+.section-desserts-header {
+  background-image: url(../media/Traditional-baklava.jpg);
+}
+.section-beverages-header {
+  background-image: url(../media/soda-beverages.jpg);
+}
+.section-catering-header {
+  background-image: url(../media/Kebab.jpg);
+}
+.section-contact-header {
+  background-image: url(../media/mediterranean_grill_somerville.jpg);
+}
+
+.section-header h1 {
   font-size: 6rem;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   text-align: center;
   padding-top: 10rem;
   text-align: center;
   color: white;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.section-sides {
+.section {
   padding-left: 18rem;
   margin: 4rem;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .section-card {
   display: flex;
   flex-direction: column;
+  align-content: space-around;
   height: 30rem;
   width: 18rem;
   border: 1px solid #c00a27;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  margin: 1rem;
 }
 .section-card img {
-  height: 12rem;
+  height: 10rem;
   object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .section-card h3 {
   padding: 2rem;
@@ -244,8 +289,337 @@ nav ul li span {
 }
 .section-card p {
   padding: 1rem;
+  height: 14rem;
 }
 
 .section-card .price {
   font-weight: 700;
+  height: 4rem;
 }
+
+/*menu*/
+.jumbotronMenu , .jumbotronOrder {
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+.jumbotronMenu .container {
+  max-width: 700px;
+  font-family: "HelveticaNeue-Light";
+}
+.clickedJumbotronMenu {
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+}
+.jumbotronMenu h2, .supporting h3 {
+  color: #706821;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 30px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #EEEEEE;
+}
+.jumbotronMenu button.accordion {
+    background-color: #eee;
+    color: #8A0504;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.jumbotronMenu button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+.jumbotronMenu div.panel {
+    padding: 0px 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+.jumbotronMenu .panel p {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.jumbotronMenu h3 {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #8A0504;
+  font-size: 26px;
+}
+.jumbotronMenu .panel h4:first-child {
+  padding-top: 20px;
+}
+.jumbotronMenu button ul{
+  color: #8A0504;
+  background-color: white;
+  padding:12px 3px 6px 22px;
+  width:420px;
+}
+.jumbotronMenu .col-md-6 {
+  padding: 0;
+  margin: 0;
+}
+#desserts {
+  padding-right: 8px;
+}
+#drinks {
+  padding-left: 8px;
+}
+.jumbotronMenu h4 {
+  font-weight: bolder;
+}
+.jumbotronMenu #price {
+  font-weight: bolder;
+  color: #BE6E41;
+}
+.jumbotronMenu ul li {
+  font-size: 16px;
+}
+#rawWarning {
+  font-size: 12px;
+}
+.line {
+  background-color: #8A0504;
+  color: white;
+  padding: 12px 6px;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  margin-bottom: 6px;
+}
+.line #price {
+  color: white;
+}
+/*catering*/
+.cateringMenu h4 {
+  padding-top: 18px;
+}
+.infoCatering {
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 14px;
+  padding:12px 0 12px 28px;
+  list-style: none;
+}
+
+.panel h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+/**contact**/
+.section-contact {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  margin: 4rem; 
+}
+.info-main {
+  padding-left: 18rem;
+  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+.contact-info {
+  padding: 1rem;
+}
+.contact-info span {
+  font-weight: 700;
+  font-size: 1.7rem;
+  padding-right: 6px;;
+  color: #c00a27;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color:rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+}
+.hours {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 2rem;
+  border-left: 1px solid #c00a27;
+}
+.hours h4 {
+  font-size: 1.4rem;
+  color: #c00a27;
+  padding-bottom: 12px;;
+}
+.hours span {
+  padding-right:12px;
+}
+.hours p {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 6px;
+}
+
+@media screen and (max-width: 800px) { 
+  nav {
+    display: none !important;
+  }
+  .p-menu1 {
+    display: block;
+  }
+  a {
+    color: #c00a27;
+    text-decoration: none;
+  }
+
+  .p-menu1{
+    height: 100%;
+  }
+
+  /* Hamburger */
+  .hamburger1 {
+    height: 45px;
+    margin: 10px;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    z-index: 120;
+  }
+
+  .hamburger1 div {
+    background-color: #c00a27;
+    position: relative;
+    width: 40px;
+    height: 5px;
+    margin-top: 7px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #toggle1 {
+    display: none;
+  }
+
+  #toggle1:checked + .hamburger1 .top {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    margin-top: 22.5px;
+  }
+
+  #toggle1:checked + .hamburger1 .meat {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    margin-top: -5px;
+  }
+
+  #toggle1:checked + .hamburger1 .bottom {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  #toggle1:checked ~ .menu1 {
+    height: 100%;
+  }
+
+
+  /* Menu */
+  .menu1 {
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    clear: both;
+    width: auto;
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+    transition: height .4s ease;
+    z-index: 120;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .menu1 a:first-child {
+    margin-top: 20px;
+  }
+
+  .menu1 a:last-child {
+    margin-bottom: 20px;
+  }
+
+  .link1 {
+    width: 100%;
+    margin: 0;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .link1:hover {
+    background-color: #fff;
+    color: rgb(61, 61, 61);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .section-main {
+    padding-left: 0;
+  }
+  .card {
+    width: 100%;
+    height: 20rem;
+  }
+  .card h1 {
+    text-align: center;
+  }
+  .info-main {
+    padding-left: 0;
+  }
+  .section-header {
+    margin-left: 0;
+  }
+  .section {
+    padding-left: 0;
+    margin: 1rem;
+  }
+  .section-contact {
+    flex-direction: column;
+  }
+  .info-main {
+    margin: 0;
+  }
+  .hours {
+    padding: 4px;;
+  }
+  .footer {
+    height: 25rem;
+    flex-direction: column;
+    padding-left: 0;
+  }
+  .footer img {
+    margin: 1rem 0;
+    align-self: center;
+    height: 2rem;
+    width: auto;
+  }
+  .footer ul {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    color: white;
+  }
+  .footer ul li {
+    padding: 1rem 0;
+    border-right: none;
+    font-size: 0.8rem;
+    padding-left: 6px;
+    border-bottom: 1px solid #c00a27;
+  }
+ }
